@@ -20,10 +20,6 @@ public class ValidationHelper {
         String regex = "([-+]?[0-9]*\\.?[0-9]+[/+\\-*])*([-+]?[0-9]*\\.?[0-9]+)";
         String validatedInput = input.replaceAll("\\s+", "");
 
-        if (validatedInput.isEmpty() || !validatedInput.matches(regex)) {
-            throw new IllegalArgumentException("You have entered invalid data. Try again.");
-        }
-
-        return true;
+        return !validatedInput.isEmpty() && validatedInput.matches(regex);
     }
 }

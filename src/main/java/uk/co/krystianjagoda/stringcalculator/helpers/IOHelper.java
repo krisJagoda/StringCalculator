@@ -11,7 +11,8 @@ public class IOHelper {
     }
 
     public void printResult(double result){
-        System.out.println(result);
+
+        System.out.println(String.format("The calculated result is: %.4f",result));
     }
 
 }

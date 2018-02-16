@@ -20,11 +20,9 @@ public class ValidationHelperTest {
     }
 
     @Test
-    public void forAStringWithLettersThrowAnIllegalArgumentException() throws Exception {
+    public void forAStringWithLettersReturnFalse() throws Exception {
 
-        assertThatThrownBy(() -> helper.validateInputFromUser("aBc"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("You have entered invalid data. Try again.");
+        assertThat(helper.validateInputFromUser("abc")).isFalse();
     }
 
     @Test
@@ -41,11 +39,9 @@ public class ValidationHelperTest {
 
 
     @Test
-    public void forAnEmptyStringThrowAnIllegalArgumentException() throws Exception {
+    public void forAnEmptyStringReturnFalse() throws Exception {
 
-        assertThatThrownBy(() -> helper.validateInputFromUser(""))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("You have entered invalid data. Try again.");
+        assertThat(helper.validateInputFromUser("")).isFalse();
     }
 
     @Test
@@ -76,11 +72,9 @@ public class ValidationHelperTest {
     }
 
     @Test
-    public void forAnInputOfOtherCharactersOtherThanNumbersAndMathematicalSymbolsThrowAnIllegalArgumentException() throws Exception {
+    public void forAnInputOfOtherCharactersOtherThanNumbersAndMathematicalSymbolsReturnFalse() throws Exception {
         String input = "1,5._";
 
-        assertThatThrownBy(()-> helper.validateInputFromUser(input))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("You have entered invalid data. Try again.");
+        assertThat(helper.validateInputFromUser(input)).isFalse();
     }
 }
