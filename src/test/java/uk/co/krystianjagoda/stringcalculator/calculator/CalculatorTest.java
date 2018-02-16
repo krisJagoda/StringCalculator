@@ -1,7 +1,8 @@
-package uk.co.krystianjagoda.stringcalculator;
+package uk.co.krystianjagoda.stringcalculator.calculator;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.within;

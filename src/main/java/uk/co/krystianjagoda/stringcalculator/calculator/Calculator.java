@@ -1,7 +1,11 @@
-package uk.co.krystianjagoda.stringcalculator;
+package uk.co.krystianjagoda.stringcalculator.calculator;
 
-public class Calculator {
+import uk.co.krystianjagoda.stringcalculator.interfaces.Calculable;
 
+public class Calculator implements Calculable {
+
+
+    @Override
     public double calculate(String equation) {
         if (equation.contains("+")){
             return addition(equation);
@@ -67,4 +71,5 @@ public class Calculator {
         }
         return result;
     }
+
 }
